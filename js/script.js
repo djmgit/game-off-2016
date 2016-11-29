@@ -129,10 +129,10 @@ function startGame() {
     player = new Player(80, 80, "red", 400, 500);
    	background = new Background(800, 800, "background1.jpg", 0, 0);
    	gamedata = new GameData();
-    backgroundmusic = new SoundLoop("../sound/back_music.mp3");
-    soundExp1 = new Sound("../sound/snd_explosion1.wav");
-    soundExp2 = new Sound("../sound/snd_explosion2.wav");
-    level = new Sound("../sound/level.wav");
+    backgroundmusic = new SoundLoop("sound/back_music.mp3");
+    soundExp1 = new Sound("sound/snd_explosion1.wav");
+    soundExp2 = new Sound("sound/snd_explosion2.wav");
+    level = new Sound("sound/level.wav");
     backgroundmusic.play();
     myGameArea.start();
 
@@ -607,25 +607,4 @@ function updateGameArea() {
 function everyinterval(n) {
     if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
     return false;
-}
-
-function moveup() {
-    player.speedY = -1; 
-}
-
-function movedown() {
-    player.speedY = 1; 
-}
-
-function moveleft() {
-    player.speedX = -1; 
-}
-
-function moveright() {
-    player.speedX = 1; 
-}
-
-function clearmove() {
-    player.speedX = 0; 
-    player.speedY = 0; 
 }
