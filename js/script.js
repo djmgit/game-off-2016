@@ -1,15 +1,7 @@
-// js code for the game
-/*document.onload = function() {
-	document.getElementById("canvasholder").innerHTML = "hello";
-	startGame();
-}*/
-
 var myGamePiece;
 var myObstacles = [];
 var myScore;
-// player object
 var player;
-// game background
 var background;
 var gamedata;
 var islands = [];
@@ -309,17 +301,10 @@ function Player(width, height, color, x, y) {
     this.image = document.getElementById("player");
     this.update = function() {
         ctx = myGameArea.context;
-       	//ctx.save();
-        //ctx.translate(this.x, this.y);
-        //ctx.rotate(this.angle);
-        //ctx.fillStyle = color;
         ctx.drawImage(this.image,this.x,this.y, this.width, this.height);
             
     }
     this.newPos = function() {
-    	//this.angle += this.moveAngle * Math.PI / 180;
-	    //this.x += this.speed * Math.sin(this.angle);
-	    //this.y -= this.speed * Math.cos(this.angle);
 	    this.x += this.speedX
 	    this.y += this.speedY;
 	    if(this.x > myGameArea.canvas.width - this.width) {
@@ -365,10 +350,6 @@ function Background(width, height, color, x, y) {
         ctx = myGameArea.context;
         ctx.drawImage(this.image, this.x, this.y,this.width, this.height);
         ctx.drawImage(this.image, this.x, this.y-this.height, this.width, this.height);
-        //ctx.drawImage(this.image, this.x + this.width, this.y,this.width, this.height);
-        //ctx.fillStyle = "orange";
-        //ctx.fillRect(this.x, this.y, this.width, this.height);    
-        //ctx.fillRect(this.x+this.width, this.y, this.width, this.height);    
     }
     this.newPos = function() {
     	if (this.y == this.height) {
@@ -460,7 +441,6 @@ function updateGameArea() {
         
         var x, height, gap, minHeight, maxHeight, minGap, maxGap;
         myGameArea.clear();
-        //background.speedX = -0.5;
         background.speedY = backgroundSpeed;
         background.newPos(); 
         background.update();
@@ -482,8 +462,6 @@ function updateGameArea() {
             maxGap = 200;
             gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
             islands.push(new Island(width, height, x, -200));
-            
-            //myObstacles.push(new component(width, x - height - gap, "green", x, height + gap));
         }
         for (i = 0; i < islands.length; i += 1) {
             islands[i].speedY = backgroundSpeed;
@@ -532,7 +510,6 @@ function updateGameArea() {
                 bullets.push(new Bullet(20,25,player.x+player.width/2-10,player.y));
                 space = 0;
            }
-           //console.log(bullets.length);
         }
 
         for (i = 0; i < bullets.length; i += 1) {
