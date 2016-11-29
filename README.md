@@ -18,7 +18,7 @@ as you can and collect flags.
 
 Shoot'em all and ENJOY !!!
 
-# ![Play Now](https://djmgit.github.io/game-off-2016/)
+# [Play Now](https://djmgit.github.io/game-off-2016/)
 
 ### To run the game locally :
 
